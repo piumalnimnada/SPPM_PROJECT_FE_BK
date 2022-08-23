@@ -14,20 +14,22 @@
                     <div class="login-wrapper pr-50" fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50">
                         <div class="title">
                           <h3>Login</h3>
+                          <p>{{userData}}</p>
                         </div>
-                        <form fxLayout="row wrap">
+                        <form fxLayout="row wrap" [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+                           
                             <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
                                 <mat-form-field class="w-100">
-                                    <input matInput placeholder="Username or email address (required)" #name="ngModel" ngModel name="name" required>
-                                    <mat-error *ngIf="name.invalid">Please enter a valid message</mat-error>
+                                    <input matInput placeholder="  Please enter email address.!"   formControlName="email" name="email" required>
+                                    <!-- <mat-error *ngIf="email.invalid">Please enter a valid PAssowrd</mat-error> -->
                                   </mat-form-field>
                             </div>
                             <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-                                <mat-form-field class="w-100">
-                                    <input matInput placeholder="Password (required)" #email="ngModel" ngModel name="email" required>
-                                    <mat-error *ngIf="email.invalid">Please enter a valid message</mat-error>
-                                  </mat-form-field>
-                            </div>
+                              <mat-form-field class="w-100">
+                                  <input matInput placeholder="  Please enter email Password.!"  formControlName="password"   name="Password" required>
+                                  <!-- <mat-error *ngIf="Password.invalid">Please enter a valid Password</mat-error> -->
+                                </mat-form-field>
+                          </div>
                             <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
                                 <button class="btn-project" mat-raised-button color="accent" type="submit">Log in</button>
                               </div>

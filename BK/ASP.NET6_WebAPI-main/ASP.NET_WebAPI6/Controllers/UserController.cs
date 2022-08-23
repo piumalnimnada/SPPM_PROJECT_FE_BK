@@ -2,6 +2,8 @@
 using ASP.NET_WebAPI6.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Net;
 
 namespace ASP.NET_WebAPI6.Controllers
@@ -85,6 +87,21 @@ namespace ASP.NET_WebAPI6.Controllers
 
             return HttpStatusCode.Created;
         }
+
+
+
+        [HttpPost("Authentication")]
+        public async Task<ActionResult<User>> Userauthentication (Auth authData)
+        {
+            var userslist = Get();
+            var jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(userslist.Result.Value);
+            List<User> myJsonObjects = JsonConvert.DeserializeObject<List<User>>(jsonString);
+            var result = myJsonObjects.Find(x => x.Username == authData.Username && x.Password == authData.Password);
+           
+            return result;
+
+        }
+
 
         [HttpPut("UpdateUser")]
         public async Task<HttpStatusCode> UpdateUser(UserDTO User)
