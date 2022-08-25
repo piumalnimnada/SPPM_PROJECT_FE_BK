@@ -16,6 +16,7 @@ import { SharedModule } from './components/shared/shared.module';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ColorOptionsComponent } from './components/color-options/color-options.component';
+import { MessageService } from './components/shared/services/message-service.service';
 
 
 
@@ -38,7 +39,7 @@ import { ColorOptionsComponent } from './components/color-options/color-options.
     NgxImgZoomModule
 
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [MessageService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
