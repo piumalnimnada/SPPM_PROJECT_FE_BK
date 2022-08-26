@@ -5,6 +5,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { AppSettings, Settings } from './components/shared/services/color-option.service';
 import { Subscription } from 'rxjs';
 import { MessageService } from './components/shared/services/message-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +32,7 @@ export class AppComponent implements OnInit {
   scrollElem;
   public settings: Settings;
   message: any;
-  constructor(private spinner: NgxSpinnerService,private messageService: MessageService, public router: Router, public appSettings:AppSettings) {
+  constructor(private spinner: NgxSpinnerService,public snackBar: MatSnackBar,private messageService: MessageService, public router: Router, public appSettings:AppSettings) {
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -299,5 +300,14 @@ export class AppComponent implements OnInit {
     }, 16);
 }
 
+
+logout(){
+  localStorage.removeItem("User");
+  localStorage.clear();
+  this.message=null;
+ let message = 'Loogout Successful.';
+ let status = 'success';
+  this.snackBar.open(message, '×', { panelClass: [status], verticalPosition: 'top', duration: 3000 });
+}
 
 }

@@ -57,6 +57,8 @@
                     <div class="widget-text">
                         <a *ngIf="!message?.text?.firstName" fxShow="false" fxShow.gt-xs [routerLink]="['/pages/my-account']" routerLinkActive="router-link-active" ><mat-icon>person</mat-icon>My Account</a>
                         <a *ngIf="message?.text?.firstName" fxShow="false" fxShow.gt-xs [routerLink]="['/pages/my-account']" routerLinkActive="router-link-active" ><mat-icon></mat-icon>{{message?.text?.firstName}}</a>
+                        <a *ngIf="message?.text?.firstName" (click)="logout()" fxShow="false" fxShow.gt-xs  ><mat-icon></mat-icon>Logout</a>
+                      
                       </div>
                   </div>
 
