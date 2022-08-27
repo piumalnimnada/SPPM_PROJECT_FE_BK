@@ -53,7 +53,7 @@ namespace ASP.NET_WebAPI6.Controllers
 
 
         [HttpGet("GetProductById")]
-        public async Task<ActionResult<ProductDTO>> GetUserById(int Id)
+        public async Task<ActionResult<ProductDTO>> GetProductById(int Id)
         {
             ProductDTO prod = await DBContext.Products.Select(
                     s => new ProductDTO
@@ -88,7 +88,7 @@ namespace ASP.NET_WebAPI6.Controllers
 
 
         [HttpPost("InsertProduct")]
-        public async Task<HttpStatusCode> InsertUser(ProductDTO s)
+        public async Task<HttpStatusCode> InsertProduct(ProductDTO s)
         {
             var entity = new Product()
             {
@@ -119,7 +119,7 @@ namespace ASP.NET_WebAPI6.Controllers
 
 
         [HttpPut("UpdateProduct")]
-        public async Task<HttpStatusCode> UpdateUser(ProductDTO s)
+        public async Task<HttpStatusCode> UpdateProduct(ProductDTO s)
         {
             var entity = await DBContext.Products.FirstOrDefaultAsync(p => p.Id == s.Id);
 
@@ -143,7 +143,7 @@ namespace ASP.NET_WebAPI6.Controllers
         }
 
         [HttpDelete("DeleteProduct/{Id}")]
-        public async Task<HttpStatusCode> DeleteUser(int Id)
+        public async Task<HttpStatusCode> DeleteProduct(int Id)
         {
             var entity = new Product()
             {
