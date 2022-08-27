@@ -70,7 +70,7 @@ namespace ASP.NET_WebAPI6.Controllers
         }
 
         [HttpPost("InsertUser")]
-        public async Task<HttpStatusCode> InsertUser(UserDTO User)
+        public async Task<UserDTO> InsertUser(UserDTO User)
         {
             var entity = new User()
             {
@@ -85,7 +85,7 @@ namespace ASP.NET_WebAPI6.Controllers
             DBContext.Users.Add(entity);
             await DBContext.SaveChangesAsync();
 
-            return HttpStatusCode.Created;
+            return User;
         }
 
 

@@ -3,6 +3,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { SidenavMenu } from './components/shared/sidebar/sidebar-menu.model';
 import { Router, NavigationEnd } from '@angular/router';
 import { AppSettings, Settings } from './components/shared/services/color-option.service';
+import { Subscription } from 'rxjs';
+import { MessageService } from './components/shared/services/message-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +14,7 @@ import { AppSettings, Settings } from './components/shared/services/color-option
 })
 export class AppComponent implements OnInit {
   public url : any;
-
+  subscription: Subscription;
   public sidenavMenuItems:Array<any>;
 
   public currencies = ['USD', 'EUR'];
@@ -28,7 +31,9 @@ export class AppComponent implements OnInit {
   title = 'ecommerce-sophia-new';
   scrollElem;
   public settings: Settings;
-  constructor(private spinner: NgxSpinnerService, public router: Router, public appSettings:AppSettings) {
+  message: any;
+  constructor(private spinner: NgxSpinnerService,public snackBar: MatSnackBar,private messageService: MessageService, public router: Router, public appSettings:AppSettings) {
+
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.url = event.url;
@@ -43,6 +48,10 @@ export class AppComponent implements OnInit {
   });
 
   this.settings = this.appSettings.settings;
+  this.messageService.subject.subscribe((res: any) => {  
+    this.message = res;  
+  })  
+
   }
   ngAfterViewInit(){
     this.router.events.subscribe(event => {
@@ -291,5 +300,14 @@ export class AppComponent implements OnInit {
     }, 16);
 }
 
+
+logout(){
+  localStorage.removeItem("User");
+  localStorage.clear();
+  this.message=null;
+ let message = 'Loogout Successful.';
+ let status = 'success';
+  this.snackBar.open(message, '×', { panelClass: [status], verticalPosition: 'top', duration: 3000 });
+}
 
 }

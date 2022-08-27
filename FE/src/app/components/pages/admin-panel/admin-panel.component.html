@@ -1,0 +1,135 @@
+<div class="my-account">
+    <div class="header-title"
+        style="background: url(assets/images/header/5.jpg); background-repeat: no-repeat; background-size: cover;">
+        <div class="container" id="mainDIV">
+            <div class="title">
+                <h2>Admin Panel</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <br>Aenean commodo ligula eget dolor</p>
+            </div>
+        </div>
+    </div>
+    <div class="my-acc sec-padding" style="background: url(assets/images/background/download.svg);">
+        <div class="container">
+            <mat-card fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start start" class="p-0">
+                <div class="my-account-wrap p-0" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start start">
+                    <div class="login-wrapper pr-50" fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50">
+                        <div class="title">
+                            <h3>Admin Login</h3>
+                            <form fxLayout="row wrap" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                                <div fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="  Please enter email address.!"
+                                            formControlName="email" name="email" required>
+                                        <!-- <mat-error *ngIf="email.invalid">Please enter a valid PAssowrd</mat-error> -->
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="  Please enter email Password.!"
+                                            formControlName="password" name="Password" required>
+                                        <!-- <mat-error *ngIf="Password.invalid">Please enter a valid Password</mat-error> -->
+                                    </mat-form-field>
+                                </div>
+                                <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1"
+                                    ngClass.xs="mt-1">
+                                    <button class="btn-project" mat-raised-button color="primary" type="submit">Log
+                                        in</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="register-wrapper pr-15" fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50" *ngIf="showPeoductInsert">
+                        <div class="title">
+                            <h3>Product Insert</h3>
+                        </div>
+                        <div class="register-body">
+                            <p>Insert New Product To Shop</p>
+                            <form fxLayout="row wrap" [formGroup]="prodform" (ngSubmit)="onProdSubmit()">
+
+                                <div fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="Product name (required)" formControlName="name"
+                                            required>
+
+                                    </mat-form-field>
+
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="Price (required)" formControlName="price" required>
+
+                                    </mat-form-field>
+
+                                    <mat-form-field class="w-100">
+                                        <input matInput type="number" placeholder="stock (required)"
+                                            formControlName="stock" required>
+
+                                    </mat-form-field>
+
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="salePrice (required)" formControlName="salePrice"
+                                            required>
+
+                                    </mat-form-field>
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="discount (required)" formControlName="discount"
+                                            required>
+
+                                    </mat-form-field>
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="pictures Path (required)"
+                                            formControlName="pictures" required>
+
+                                    </mat-form-field>
+
+                                    <mat-form-field class="w-100">
+                                        <textarea matInput placeholder="shortDetails (required)"
+                                            formControlName="shortDetails" required></textarea>
+
+                                    </mat-form-field>
+                                    <mat-form-field class="w-100">
+                                        <textarea matInput placeholder="description (required)"
+                                            formControlName="description" required></textarea>
+
+                                    </mat-form-field>
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="brand (required)" formControlName="brand" required>
+
+                                    </mat-form-field>
+
+
+                                    <label id="example-radio-group-label">is this new product ?</label>
+                                    <mat-radio-group aria-label="Select an option" formControlName="newPro">
+                                        <mat-radio-button value=true>Yes</mat-radio-button>
+                                        <mat-radio-button value=false>No</mat-radio-button>
+                                    </mat-radio-group>
+
+
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="state (required)" formControlName="state" required>
+
+                                    </mat-form-field>
+                                    <mat-form-field class="w-100">
+                                        <input matInput placeholder="category (required)" formControlName="category"
+                                            required>
+
+                                    </mat-form-field>
+
+                                </div>
+
+                                <!-- <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p> -->
+                                <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" ngClass.sm="mt-1"
+                                    ngClass.xs="mt-1">
+                                    <button class="btn-project" mat-raised-button color="primary"
+                                        type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+
+        </div>
+    </div>
+
+</div>

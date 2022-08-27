@@ -14,6 +14,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { BlogModule } from '../blog/blog.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AgmCoreModule } from '@agm/core';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AgmCoreModule } from '@agm/core';
     MyAccountComponent,
     FaqComponent,
     AboutUsComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    AdminPanelComponent
 
   ]
 })

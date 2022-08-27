@@ -1,5 +1,5 @@
 <div class="my-account">
-    <div class="header-title" style="background: url(assets/images/background/header.jpg);">
+  <div class="header-title" style="background: url(assets/images/header/5.jpg); background-repeat: no-repeat; background-size: cover;">
         <div class="container" id="mainDIV" >
         <div class="title">
             <h2>My Account</h2>
@@ -41,11 +41,26 @@
                             </div>
                             <div class="register-body">
                               <p>Create new account today to reap the benefits of a personalized shopping experience.</p>
-                              <form fxLayout="row wrap">
+                              <form fxLayout="row wrap" [formGroup]="RegiForm" (ngSubmit)="onRegSubmit()">
                                   <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
                                       <mat-form-field class="w-100">
-                                          <input matInput placeholder="Username or email address (required)" #name="ngModel" ngModel name="name" required>
-                                          <mat-error *ngIf="name.invalid">Please enter a valid message</mat-error>
+                                          <input matInput placeholder="First name (required)" formControlName="fname" required>
+                                       
+                                        </mat-form-field>
+
+                                        <mat-form-field class="w-100">
+                                          <input matInput placeholder="Last name (required)" formControlName="lname" required>
+                                        
+                                        </mat-form-field>
+
+                                        <mat-form-field class="w-100">
+                                          <input matInput placeholder="User name (required)" formControlName="uname" required>
+                                         
+                                        </mat-form-field>
+
+                                        <mat-form-field class="w-100">
+                                          <input matInput type="password" placeholder="Password (required)" formControlName="pw" required>
+                                    
                                         </mat-form-field>
                                   </div>
 

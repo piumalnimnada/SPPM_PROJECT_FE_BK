@@ -21,4 +21,8 @@ export class UserService {
    public login(userData): Observable<any> {
     return this.httpClient.post('https://localhost:7095/api/User/Authentication',userData);
   }
+
+  public Register(userData): Observable<any> {
+    return this.httpClient.post('https://localhost:7095/api/User/InsertUser',userData);
+  }
 }

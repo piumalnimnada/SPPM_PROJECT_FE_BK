@@ -37,6 +37,15 @@ export class ProductService {
   // }
 
 
+  public PostProducts(postData): Observable<any> {
+    return this.httpClient.post('https://localhost:7095/api/Product/InsertProduct',postData);
+  
+  }
+
+  public PostBills(postData): Observable<any> {
+    return this.httpClient.post('https://localhost:7095/api/Billing/InsertBillDetails',postData);
+  
+  }
 
 
 
@@ -45,6 +54,7 @@ export class ProductService {
       return this.products();
     }
 
+   
 
       // Get Products By Id
   public getProduct(id: number): Observable<Product> {

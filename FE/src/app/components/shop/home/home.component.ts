@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit {
   products: Product[];
   public banners = [];
   public slides = [
-    { title: 'THE BEST CHOICE IS HERE', subtitle: 'Welcome to Sophia, an oasis for all healthy food and organic produce sites, ready to make your online presentation shine.', image: 'assets/images/wood/1.jpg' },
-    { title: 'Biggest discount', subtitle: 'Welcome to Mildhill, an oasis for all healthy food and organic produce sites, ready to make your online presentation shine.', image: 'assets/images/wood/2.jpg' },
-    { title: 'Biggest sale', subtitle: 'Welcome to Mildhill, an oasis for all healthy food and organic produce sites, ready to make your online presentation shine.', image: 'assets/images/wood/3.jpg'},
+    { title: 'Eco Friendly', subtitle: 'The entire line of wooden goods is created entirely out of natural kithul wood. It respects nature and does not harm the environment.', image: 'assets/images/wood/1.jpg' },
+    { title: 'Industry Standard', subtitle: 'Made with high quality industry standards.', image: 'assets/images/wood/2.jpg' },
+    { title: 'Awesome Quality', subtitle: 'All of the products are 100% unique and high quality.', image: 'assets/images/wood/3.jpg'},
 
   ];
 

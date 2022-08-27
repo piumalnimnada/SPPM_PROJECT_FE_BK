@@ -15,6 +15,8 @@ namespace ASP.NET_WebAPI6.Entities
 
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Billing> Billings { get; set; }
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -105,6 +107,49 @@ namespace ASP.NET_WebAPI6.Entities
                  .HasMaxLength(45);
             });
 
+
+            modelBuilder.Entity<Billing>(entity =>
+            {
+                entity.ToTable("billing");
+
+                entity.Property(e => e.Id).HasColumnType("int(11)");
+
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.CompanyName)
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.Address)
+                    .IsRequired()
+                    .HasMaxLength(500);
+
+                entity.Property(e => e.Town)
+                   .IsRequired()
+                   .HasMaxLength(100);
+
+                entity.Property(e => e.State)
+                    .IsRequired()
+                    .HasMaxLength(45);
+
+                entity.Property(e => e.PostCode)
+                    .IsRequired();
+
+                entity.Property(e => e.Email)
+                    .IsRequired();
+                entity.Property(e => e.Phone)
+                  .IsRequired();
+
+                entity.Property(e => e.Notes)
+                    .HasMaxLength(500);
+
+               
+            });
             OnModelCreatingPartial(modelBuilder);
         }
 

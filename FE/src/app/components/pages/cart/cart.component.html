@@ -1,5 +1,5 @@
 <div class="cart-wrapper">
-<div class="header-title" style="background: url(assets/images/background/header.jpg);">
+   <div class="header-title" style="background: url(assets/images/header/3.jpg); background-repeat: no-repeat; background-size: cover;">
     <div class="container" id="mainDIV" >
     <div class="title">
         <h2>Cart</h2>
@@ -59,7 +59,7 @@
                   </div>
                </div>
                <div class="mat-row">
-                  <div class="mat-cell"><a  mat-raised-button  class="btn-project" [routerLink]="['/home/one']" routerLinkActive="router-link-active" >Continue shopping</a></div>
+                  <div class="mat-cell"><a  mat-raised-button style="color: red !important"  class="btn-project" [routerLink]="['/home/one']" routerLinkActive="router-link-active" >Continue shopping</a></div>
                   <div class="mat-cell"></div>
                   <div class="mat-cell"></div>
                   <div class="mat-cell text-right">
@@ -67,7 +67,7 @@
                         <span class="new-price">Grand total: {{getTotal()  | async | currency:productsService?.currency:'symbol'}}</span>
                      </div>
                   </div>
-                  <div class="mat-cell text-center"><a mat-raised-button  class="btn-project" [routerLink]="['/pages/checkout']" routerLinkActive="router-link-active" >Proceed To Checkout</a></div>
+                  <div class="mat-cell text-center"><a mat-raised-button  class="btn-project" style="color: red !important" [routerLink]="['/pages/checkout']" routerLinkActive="router-link-active" >Proceed To Checkout</a></div>
                </div>
             </div>
          </mat-card>

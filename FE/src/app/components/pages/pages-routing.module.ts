@@ -8,6 +8,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FaqComponent } from './faq/faq.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'cart', component: CartComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'faq', component: FaqComponent },
+      { path: 'admin', component: AdminPanelComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'wishlist', component: WishlistComponent },
       { path: 'my-account', component: MyAccountComponent },
