@@ -54,8 +54,13 @@ export class MyAccountComponent implements OnInit {
           this.userData=data.username;
           this.loginForm.reset();
         let  message = 'Login Successful.';
-          status = 'success';
+         let status = 'success';
           this.snackBar.open(message, '×', { panelClass: [status], verticalPosition: 'top', duration: 3000 });
+        }else{
+          this.loginForm.reset();
+          let  message = 'Login Unsuccessful.';
+         let   status = 'success';
+            this.snackBar.open(message, '×', { panelClass: [status], verticalPosition: 'top', duration: 3000 });
         }
        
       }) 

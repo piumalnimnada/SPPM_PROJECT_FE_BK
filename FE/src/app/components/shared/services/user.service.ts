@@ -14,10 +14,6 @@ export class UserService {
   constructor(private httpClient: HttpClient, public snackBar: MatSnackBar) {
   
    }
-
-
-
-
    public login(userData): Observable<any> {
     return this.httpClient.post('https://localhost:7095/api/User/Authentication',userData);
   }
